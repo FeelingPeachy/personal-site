@@ -18,11 +18,13 @@ html, body {
 
     /* setting up the grid for content*/
     grid-template-columns: 1fr;
-    grid-template-rows  : 0.4fr 2.5fr 0.5fr;
+    grid-template-rows  : 0.4fr 2fr 2fr 0.5fr;
     grid-template-areas: 
     "nav"
     "main"
+    "content"
     "footer";
+    
     grid-gap: 0.2rem;
     padding: 1rem;    
     
@@ -37,22 +39,30 @@ nav{
     padding-left: 1rem; 
 }
 
-nav .nav-links {
-    display: flex; 
-    gap: 1rem; 
+nav .logo{
+    font-family: 'redaction_35-italic', sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    
 }
+
 
 nav a {
     text-decoration: none;
     color: #000;
-    font-weight: 800;
+}
+
+nav .nav-links {
+    display: flex; 
+    gap: 1rem; 
+    font-family: 'ProFontWindows', sans-serif;
 }
 
 /*
 in the main section left will be the about sextion, right will be media
 */
 main{
-    border-bottom: 0.01rem solid black; 
+    /* border: #000 solid; */
     grid-area: main;
     padding: 2rem;
     gap:1rem;
@@ -63,13 +73,15 @@ main{
 }
 
 main .about-section{
-    /* border: black solid; */
+    grid-area: about-section;
+    /* border: black solid;  */
     display: flex;
     flex-direction: column; /* change axis of flex */
     text-align: center;
     justify-content: flex-start; /* items are packed toward the start of the flex-direction. */
     padding: 8vh 2rem 0 2rem;    /* determining how far to the top of main container */
     font-family: 'ProFontWindows', sans-serif;
+    max-height: 40vh;
     
 }
 
@@ -77,22 +89,87 @@ main .about-section #greeting{
     font-weight: 800;
     font-size: 5rem;
     margin-bottom: 2rem;
+    
 }
 
 main .image{
-    border: black solid;
-    
+    grid-area: image;
+    /* border: black solid;  */
+    max-height: 40vh;   
 }
+
+main .image img{
+    min-width: 300px; 
+    min-height: 300px; 
+    max-height: 50vh;
+    height: auto; 
+    
+
+}
+
+.content{
+    grid-area: content;
+    /* border: black solid;
+    border-bottom: 0.01rem solid black; */
+    display: flex;
+    justify-content: center;
+}
+
+.content .card{
+    margin: 1rem;
+    border: #B454C1 solid;
+    width: 33%;
+    font-family: "ProFontWindows", sans-serif;
+}
+
+.content .card .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+    padding: 1rem;
+
+}
+
+.content .card .card-content h1{
+    color: #B454C1;
+    font-size: 5vh ;
+}
+
+
+
+
 
 footer{
     /* border: 0.1rem solid black; */
     grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 0.5rem;
+    gap: 1;
+    font-family: "ProFontWindows", sans-serif;
+    
+}
+
+footer #plinks{
+    padding: 1rem 0rem 0.2rem 0rem;
+}
+
+@font-face {
+    font-family: 'ProFontWindows'; 
+    src: url('./ProFontWindows.ttf');
+
+}
+
+@font-face {
+    font-family: "redaction_35-italic";
+    src: url("./redaction_35-italic.woff2") format("woff2");
 }
 
 
 @font-face {
-    font-family: 'ProFontWindows'; /* No extra character here */
-    src: url('/ProFontWindows.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    font-family: "redaction-regular";
+    src: url("./LeagueMono-UltraLight.ttf");
 }
