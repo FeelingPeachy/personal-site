@@ -1,0 +1,98 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+  
+
+.container{
+    display:grid;
+    height: 100vh;
+
+    /* importanting background asset and adding it */
+    background-image: url("/Component 21.png");
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    filter: brightness(1.2);
+    filter: contrast(1.2);
+
+    /* setting up the grid for content*/
+    grid-template-columns: 1fr;
+    grid-template-rows  : 0.4fr 2.5fr 0.5fr;
+    grid-template-areas: 
+    "nav"
+    "main"
+    "footer";
+    grid-gap: 0.2rem;
+    padding: 1rem;    
+    
+}
+
+nav{
+    border-bottom: 0.01rem solid black;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem; 
+}
+
+nav .nav-links {
+    display: flex; 
+    gap: 1rem; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 800;
+}
+
+/*
+in the main section left will be the about sextion, right will be media
+*/
+main{
+    border-bottom: 0.01rem solid black; 
+    grid-area: main;
+    padding: 2rem;
+    gap:1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "about-section image"; 
+}
+
+main .about-section{
+    /* border: black solid; */
+    display: flex;
+    flex-direction: column; /* change axis of flex */
+    text-align: center;
+    justify-content: flex-start; /* items are packed toward the start of the flex-direction. */
+    padding: 8vh 2rem 0 2rem;    /* determining how far to the top of main container */
+    font-family: 'ProFontWindows', sans-serif;
+    
+}
+
+main .about-section #greeting{
+    font-weight: 800;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
+main .image{
+    border: black solid;
+    
+}
+
+footer{
+    /* border: 0.1rem solid black; */
+    grid-area: footer;
+}
+
+
+@font-face {
+    font-family: 'ProFontWindows'; /* No extra character here */
+    src: url('/ProFontWindows.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
