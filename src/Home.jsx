@@ -15,12 +15,12 @@ export default function Home(){
       <a href="/Home/" className="logo">Darren<span style={{ color: 'red' }}>.</span></a> 
 
       <div className="nav-links">
-        <a href="/Resume/">Resume</a> 
-        <a href="/Projects/">Projects</a> 
-        <a href="/Contact/">Contact Me</a>
+        <a href="/Resume/" id="mode">Mode</a> 
+        <a href="/Projects/" id="projects">Projects</a> 
+        <a href="/Contact/" id="contact">Contact Me</a>
 
         <div className="switch-modes">
-          <button>click</button>
+          <button>Resume</button>
         </div> 
       </div>
     </nav>
@@ -61,7 +61,6 @@ export default function Home(){
         </div>
       </div>
 
-      
 
       <div className="card">
         <div className="card-content">
