@@ -17,12 +17,20 @@ export default function Home(){
       <div className="nav-links">
         <a href="/Resume/" id="mode">Mode</a> 
         <a href="/Projects/" id="projects">Projects</a> 
-        <a href="/Contact/" id="contact">Contact Me</a>
-
+        <a href="/Contact/" id="contact">Contact</a>
         <div className="switch-modes">
           <button>Resume</button>
-        </div> 
+        </div>        
       </div>
+
+      <div class="dropdown">
+          <button class="dropbtn">Menu</button>
+          <div class="dropdown-content">
+            <a href="#">Resume</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
     </nav>
 
     <main>
