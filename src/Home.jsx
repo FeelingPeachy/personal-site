@@ -17,12 +17,20 @@ export default function Home(){
       <div className="nav-links">
         <a href="/Resume/" id="mode">Mode</a> 
         <a href="/Projects/" id="projects">Projects</a> 
-        <a href="/Contact/" id="contact">Contact Me</a>
-
+        <a href="/Contact/" id="contact">Contact</a>
         <div className="switch-modes">
           <button>Resume</button>
-        </div> 
+        </div>        
       </div>
+
+      <div class="dropdown">
+          <button class="dropbtn">Menu</button>
+          <div class="dropdown-content">
+            <a href="#">Resume</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
     </nav>
 
     <main>
@@ -30,16 +38,16 @@ export default function Home(){
         <div id="greeting">
           Hi, I am Darren!
         </div>
-      <div id="about-text">
-        {text1}
-      </div>
-      
-      </div>
-      <div className="image">
-         <img src="/Head.png" alt="Memoji" /> 
+        <div id="about-text">
+          {text1}
+        </div>
       </div>
     </main>
 
+    
+      <div className="image">
+         <img src="/Head.png" alt="Memoji" /> 
+      </div>
 
     <div className="content"> 
 
