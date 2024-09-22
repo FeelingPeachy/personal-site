@@ -30,16 +30,16 @@ export default function Home(){
         <div id="greeting">
           Hi, I am Darren!
         </div>
-      <div id="about-text">
-        {text1}
-      </div>
-      
-      </div>
-      <div className="image">
-         <img src="/Head.png" alt="Memoji" /> 
+        <div id="about-text">
+          {text1}
+        </div>
       </div>
     </main>
 
+    
+      <div className="image">
+         <img src="/Head.png" alt="Memoji" /> 
+      </div>
 
     <div className="content"> 
 

@@ -20,13 +20,13 @@ html, body {
     filter: contrast(1.2);
 
     /* setting up the grid for content*/
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows  : auto;
     grid-template-areas: 
-    "nav"
-    "main"
-    "content"
-    "footer";
+    "nav nav"
+    "main image"
+    "content content"
+    "footer footer";
     
     grid-gap: 0.2rem;
     padding: 1rem;    
@@ -112,7 +112,7 @@ nav .nav-links #contact::before{
     width: 0%;
     height: 2px;
     background: #000;
-    transition: 0.5s;
+    transition: all 0.5s ease;
 }
 
 nav .nav-links #contact:hover::before{
@@ -157,45 +157,43 @@ nav button:hover {
 in the main section left will be the about sextion, right will be media
 */
 main{
-    /* border: #000 solid; */
+    /* border: #000 solid;  */
     grid-area: main;
     padding: 2rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: 
-    "about-section image"; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+   
 }
 
 main .about-section{
-    grid-area: about-section;
+    
     /* border: black solid;  */
     display: flex;
     flex-direction: column; /* change axis of flex */
     text-align: center;
     justify-content: flex-start; /* items are packed toward the start of the flex-direction. */
     padding: 2rem;    /* determining how far to the top of main container */
-    font-family: 'ProFontWindows', sans-serif;
-    max-height: 40vh;
-    
+    font-family: 'ProFontWindows', sans-serif;    
 }
 
 main .about-section #greeting{
     font-weight: 800;
     font-size: 5rem;
-    margin-bottom: 0.2rem;
-    margin-top: 5rem;
+    margin-bottom: 1rem;
     
 }
 
-main .image{
-    grid-area: image;
-    /* border: black solid;  */
+.image{
+    
+    /* border: black solid; */
     display: flex;
     justify-content: center;
     /* max-height: 40vh;  ///////////////  */
 }
 
-main .image img{
+.image img{
     /* min-width: 200px; 
     min-height: 200px; 
     max-height: 50vh;
@@ -213,11 +211,11 @@ main .image img{
 
 .content{
     grid-area: content;
-    /* border: black solid;
-    border-bottom: 0.01rem solid black; */
+    /* border: black solid; */
     display: flex;
     flex-wrap: wrap; /* allow to flex wrap so when below width can wrap and 100%*/
     justify-content: center;
+    
 }
 
 .content .card{
@@ -225,7 +223,7 @@ main .image img{
     border: #B454C1 solid;
     width: 30%;
     font-family: "ProFontWindows", sans-serif;
-    flex: 1 1 auto; /* Allow cards to grow and shrink */
+    
 }
 
 .content .card .card-content{
@@ -233,13 +231,13 @@ main .image img{
     flex-direction: column;
     align-items: center ;
     justify-content: center;
-    padding: 1rem;
+    padding: .2rem;
 
 }
 
 .content .card .card-content h1{
     color: #B454C1;
-    font-size: 5vh ;
+    font-size: 5vw ;
 }
 
 footer{
@@ -272,17 +270,19 @@ footer #plinks{
 
 
 @media screen and (max-width:885px){
-     .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto; 
-    }
 
-    main {
+    .container {
         grid-template-columns: 1fr;
-        grid-template-rows: auto; 
+        /* grid-template-rows: 0.1fr 0.2fr .1fr 0.2fr 0.1fr;  */
         grid-template-areas: 
-        "about-section"
-        "image";
+        "nav"
+        "main"
+        "image"
+        "content"
+        "footer";
+    }
+    nav {
+        flex-direction: column; /* Stack items */
     }
 
     .content .card {
@@ -290,6 +290,7 @@ footer #plinks{
     }
 
     main .about-section {
+        
         padding: 2rem 1rem;
     }
 
@@ -305,6 +306,21 @@ footer #plinks{
         justify-content: center;
         padding: 1rem;
     
+    }
+
+    .image img{
+        /* min-width: 200px; 
+        min-height: 200px; 
+        max-height: 50vh;
+        height: auto; 
+        justify-content: center; */
+        /* background: black; */
+        max-width: 60%; 
+        
+    
+        /* need to maintain the aspect raptio */
+        height: auto; 
+        width: auto;
     }
     .content .card .card-content h1 {
         color: #B454C1;
