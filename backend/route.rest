@@ -1,0 +1,14 @@
+
+
+# GET http://localhost:5000/posts
+
+POST http://localhost:5000/posts
+Content-Type: application/json
+
+{
+    "title": "Step Up",
+    "description": "Activity tracking web app that promotes sustainability",
+    "link": "link"
+}
+
+
