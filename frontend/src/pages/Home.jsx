@@ -1,5 +1,5 @@
 import "../styles/Home.css"
-//import "../styles/card.css"
+
 import { useState, useEffect } from "react"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
