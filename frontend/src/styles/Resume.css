@@ -1,0 +1,123 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height:100%;
+    overflow: auto;
+}
+  
+
+.container{
+    display:grid;
+    height: auto;
+
+    /* importanting background asset and adding it */
+    background-image: url("/Component 21.png");
+    background-size: cover;
+    background-position: center; 
+    overflow: hidden;
+    
+    filter: brightness(1.2);
+    filter: contrast(1.2);
+
+    /* setting up the grid for content*/
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "nav"
+    "resume-content"
+    "footer footer";
+    
+    grid-gap: 0.2rem;
+    padding: 1rem;    
+    
+}
+
+.resume-content {
+    /* border: black solid;  */
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto; /* allow scrolling when hieght to big */
+    
+}
+
+.resume-content #downloader{
+    margin-left: auto;
+    margin-top: 2rem;
+    margin-right: 4.3rem;
+    transform: scale(2);
+    color: purple;
+    transition: color 0.2s;
+    
+}
+
+.resume-content #downloader a{
+    text-decoration: none;
+    color: purple;
+    transition: color 0.2s;
+    
+}
+
+.resume-content #downloader:hover a{
+    color:#B454C1;
+   
+}
+
+.resume-content .wrapper {
+    margin: 2rem;
+}
+
+.resume-content .wrapper .entry{
+    border-bottom: black solid 0.01rem;
+}
+
+.resume-content .wrapper div {
+    padding: 1rem;
+    margin-bottom: 0.2rem;
+    font-family: "redaction_35-italic";
+    min-height: 3rem; 
+    max-height: 3rem; 
+    overflow: hidden; 
+    transition: max-height 1s ease; 
+    cursor: pointer; 
+}
+
+
+.resume-content .wrapper .h2-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resume-content .wrapper .entry .h2-header #arrow {
+    margin-right: 1rem;
+    transform: scale(1.5);
+    position: relative;
+    transition: transform 0.5s ease; 
+}
+
+.resume-content .wrapper .entry:hover #arrow {
+    transform: translateX(100%); /*override old val and translate for */
+}
+
+
+.resume-content .wrapper div ul{
+    font-family: 'ProFontWindows', sans-serif;
+}
+
+
+.resume-content .wrapper div:hover {
+    max-height: 50rem; 
+}
+
+.resume-content .wrapper div p {
+    opacity: 0;
+    transition: opacity 0.3s ease; 
+}
+
+.resume-content .wrapper div:hover p {
+    opacity: 1;
+}
+
+
