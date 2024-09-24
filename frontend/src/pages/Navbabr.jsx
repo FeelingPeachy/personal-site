@@ -34,8 +34,8 @@ export default function Navbar(){
             <button className="dropbtn">Menu</button>
             <div className="dropdown-content">
                 <a href="/resume">Resume</a>
-                <a href="#">Projects</a>
-                <a href="#">Contact</a>
+                <a href="https://github.com/FeelingPeachy">Projects</a>
+                <a onClick={handleContact}>Contact</a>
             </div>
             </div>
         </nav>

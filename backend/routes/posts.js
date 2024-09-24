@@ -31,6 +31,7 @@ router.get("/:id", async (req, res) => {
 
 // POST route for creating a new post
 router.post("/", async (req, res) => {
+    console.log("hello")
     const post = new Posts({
         title: req.body.title,         // Access title from the request body
         description: req.body.description,
@@ -40,8 +41,9 @@ router.post("/", async (req, res) => {
     try {
         const newPost = await post.save();
         res.status(201).json(newPost);  
+
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(400).json({ err });
     }
 });
 // Update one post

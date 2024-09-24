@@ -1,8 +1,9 @@
-require('dotenv').config()
+require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
 const path = require('path');
 const mongoose = require("mongoose");
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -10,21 +11,22 @@ const PORT = process.env.PORT || 5000;
 mongoose.connect(process.env.DATABASE_URL);
 const db = mongoose.connection;
 db.on("error", (error) => { console.log(error) });
-db.once("open", () => { console.log("connected to database") });
+db.once("open", () => { console.log("Connected to database") });
 
-
-// Serve static files from the React app
-// the way i understand it is that express serves the initial index html, from which point react handles navigation and express handles apis
-app.use(express.static(path.join(__dirname, '../frontend/dist'))); // Change 'dist' to 'build' if using Create React App
+// Middleware
 app.use(cors());
+app.use(express.json()); 
+app.use(express.static(path.join(__dirname, '../frontend/dist'))); 
 
-//routes
+// Routes
 const postRoutes = require('./routes/posts'); // Create this file later
 const homeRoutes = require('./routes/home');
 
+
 app.use('/posts', postRoutes);
-app.use('/home', homeRoutes);
+app.use('/', homeRoutes);
+
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
