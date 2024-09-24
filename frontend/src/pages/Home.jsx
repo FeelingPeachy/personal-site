@@ -1,8 +1,6 @@
 import "../styles/Home.css"
-
 import { useState, useEffect } from "react"
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Footer from "./footer";
 import Navbar from "./Navbabr";
@@ -16,12 +14,16 @@ export default function Home(){
   // Fetching posts
   useEffect(() => {
     const fetchAllPosts = async () => {
-        try {
-            const res = await axios.get("http://localhost:5000/posts/preview");
-            setPosts(res.data);
-        } catch (error) {
-            console.error('Error fetching posts:', error);
-        }
+      try {
+        const res = await fetch("http://localhost:5000/posts/preview", {
+            method: "GET"
+        });
+        const data = await res.json(); 
+        setPosts(data); 
+
+      } catch (error) {
+          console.error('Error fetching posts', error);
+      }
     };
 
     fetchAllPosts();
@@ -54,7 +56,7 @@ export default function Home(){
 
   const loadcontent = (post) =>{
     console.log(post)
-    window.location.href = post.link;
+    window.location.href = post.link; // route to external web page
   }
   
   return <div className="container">

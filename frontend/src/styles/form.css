@@ -2,30 +2,31 @@
 /* creating a dark overlay */
 .window-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* creating a darkened background for when we open form  */
-    z-index: 1000; /* Place it above the stack */
+    z-index: 1; /*Place it above the stack */
 }
 
 
 /* creating form that is displayed ontop of all the content in the center of the screen */
 .formpop {
-    position: fixed; 
+
+    position: absolute; /* stay fixed in center */
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
+
     background: white; 
-    padding: 10vh;
-    border-radius: 5%; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    z-index: 1001;
+    width: 70vw;
+    height: auto;
+    padding: 2rem;
+    border-radius: 10px;
+    z-index: 1;
     font-family: "ProFontWindows", sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
 .popup-form{
@@ -62,11 +63,20 @@ textarea {
     padding: 0.5rem; 
     width: 100%; 
     font-size: 1rem; 
+    font-family: "ProFontWindows", sans-serif;
+}
+
+textarea{
+    margin-top: 2rem;
 }
 
 input:focus,
 textarea:focus {
     border-bottom: 2px solid #B454C1; 
     transition: border-bottom 0.3s ease; 
+    
 }
 
+
+/* if working on laptop center it 50% else do it 20% to prevenet more scrolling on narrow and long screens */
+/* note that media queries that are more specific take priority aswell as the natural cascade of css     */

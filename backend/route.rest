@@ -2,13 +2,22 @@
 
 # GET http://localhost:5000/posts
 
-POST http://localhost:5000/posts
+# POST http://localhost:5000/home
+# Content-Type: application/json
+
+# {
+#     "title": "Step Up",
+#     "description": "Activity tracking web app that promotes sustainability",
+#     "link": "link"
+# }
+
+
+POST http://localhost:5000/
 Content-Type: application/json
 
 {
-    "title": "Step Up",
-    "description": "Activity tracking web app that promotes sustainability",
-    "link": "link"
+    "name": "Step Up",
+    "email": "Activity tracking web app that promotes sustainability",
+    "description": "45345345345 r4e"
 }
-
 
