@@ -1,42 +1,13 @@
 import "../styles/Resume.css"
-import { useState, useEffect } from "react"
-import EmailIcon from '@mui/icons-material/Email';
-import LinkIcon from '@mui/icons-material/Link';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import DownloadIcon from '@mui/icons-material/Download';
+import Footer from "./footer";
+import Navbar from "./Navbabr";
 
 export default function Resume(){
 
-  const handleclick = () => {
-    navigate('/resume')
-  }
 
   return <div className="container">
-
-    <nav>
-      <a href="/" className="logo">Darren<span style={{ color: 'red' }}>.</span></a> 
-
-      <div className="nav-links">
-        <a href="/Resume" id="mode">Mode</a> 
-        <a href="/Projects" id="projects">Projects</a> 
-        <a href="/Contact" id="contact">Contact</a>
-        <div className="switch-modes">
-          <button onClick={handleclick}>Resume</button>
-        </div>        
-      </div>
-
-      <div className="dropdown">
-          <button className="dropbtn">Menu</button>
-          <div className="dropdown-content">
-            <a href="/resume">Resume</a>
-            <a href="/projects">Projects</a>
-            <a href="/contact">Contact</a>
-          </div>
-        </div>
-    </nav>
-
+    <Navbar></Navbar>
 
     {/* <span style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>2024 - Present  <span id="arrow" style={{display: "flex", justifyContent:"center"}}><KeyboardArrowDownIcon></KeyboardArrowDownIcon> </span></span> */}
     <div className="resume-content">
@@ -124,25 +95,10 @@ export default function Resume(){
             </ul>
         </div>
 
-        
-
         </div>
         
     </div>
 
-
-  
-
-    <footer>
-      <div id="email" style={{display:"flex", alignItems:"center"}}> 
-        <EmailIcon style={{marginRight: "0.25rem"}}></EmailIcon> 
-        email : <a href="" style={{ textDecoration: 'underline', color: 'teal' }}>gichurud02@gmail.com </a> 
-        </div>
-
-      <div id="plinks" style={{display:"flex", alignItems:"center"}}> 
-        <LinkIcon style={{marginRight: "0.3rem"}}></LinkIcon>
-        personal links: </div>
-      <div > <a href="https://github.com/FeelingPeachy" style={{ textDecoration: 'underline', color: 'teal' }}>github</a>  |  <a href="https://www.linkedin.com/in/darrengitagama/" style={{ textDecoration: 'underline', color: 'teal' }}>LinkedIn</a>  |  <a href="https://leetcode.com/u/gitagamad02/"  style={{ textDecoration: 'underline', color: 'teal' }}>Leetcode</a> </div>
-    </footer>
+    <Footer></Footer>
   </div>
 }
