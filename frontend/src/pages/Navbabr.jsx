@@ -17,7 +17,6 @@ export default function Navbar(){
         setOpen(true)
     }
 
-
     return <>
     <nav>
         <a href="/" className="logo">Darren<span style={{ color: 'red' }}>.</span></a> 
