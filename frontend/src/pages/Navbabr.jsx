@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import ContactFormm from './ContactForm';
-import "../styles/Navbar.css"
+import "../styles/navbar.css"
 
 export default function Navbar(){
 
