@@ -1,8 +1,7 @@
 import "../styles/Home.css"
 import { useState, useEffect } from "react"
-
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import Footer from "./footer";
+import Footer from "./Footer";
 import Navbar from "./Navbabr";
 
 export default function Home(){
