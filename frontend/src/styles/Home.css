@@ -159,9 +159,9 @@ main .about-section #greeting{
 
 @font-face {
     font-family: "redaction_35-italic";
-    src: url("./Redaction_35-italic.woff2") format("woff2"),
-         url("./Redaction_35-italic.otf") format("opentype");
-    
+    src: url("https://db.onlinewebfonts.com/t/3503b5862c6ab0c2c8235806fb146114.woff2")format("woff2");
+    /* src: url("./Redaction_35-italic.woff2") format("woff2"),
+    url("./Redaction_35-italic.otf") format("opentype");  */
 }
 
 
