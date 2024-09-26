@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import ContactFormm from './ContactForm';
 import "../styles/navbar.css"
+import { Link } from 'react-router-dom';
 
 export default function Navbar(){
 
@@ -23,7 +24,7 @@ export default function Navbar(){
 
         <div className="nav-links">
             
-            <a href="/Contact" id="contact" onClick={handleContact}>Contact</a>
+            <a href="/" id="contact" onClick={handleContact}>Contact</a>
             <div className="switch-modes">
             <button onClick={handleclick}>Resume</button>
             </div>        
@@ -32,7 +33,7 @@ export default function Navbar(){
         <div className="dropdown">
             <button className="dropbtn">Menu</button>
             <div className="dropdown-content">
-                <a href="/resume">Resume</a>
+                <Link to="/resume">Resume</Link>
                 <a href="https://github.com/FeelingPeachy">Projects</a>
                 <a onClick={handleContact}>Contact</a>
             </div>
