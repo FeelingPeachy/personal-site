@@ -71,20 +71,19 @@ export default function Home(){
         <div id="about-text">
           I am a computer Science student at the university of Exeter, currently doing my masters.
           I am passionate about creating and learning - have a look around to find out more! Here are some of my interests and skills:
-          <br></br>
-          <br />
+          
+         </div>
+        <div id="all-interest">
           <span className="interest"> Music Production </span>  <span className="interest">  Java </span> <span className="interest"> Guitar </span>
           <span className="interest">  Python </span>  <span className="interest">  Machine Learning </span>  <span className="interest">  Javascript </span> 
           <span className="interest">  AWS </span> <span className="interest">  Art </span> 
-
-
-        </div>
+          </div>
       </div>
     </main>
     
-      <div className="image">
-         <img src="/Head.png" alt="Memoji" /> 
-      </div>
+    <div className="image">
+        <img src="/Head.png" alt="Memoji" /> 
+    </div>
 
     <div className="content"> 
 

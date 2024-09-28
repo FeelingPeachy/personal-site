@@ -72,14 +72,18 @@ main .about-section #greeting{
     justify-content: center;
 }
 
+#all-interest{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .about-section .interest{
     color: white;
     background: #B454C1;
     margin: 0.3rem;
     padding: 0.5rem;
     border-radius: 10px;
-    overflow: visible;                /* Show overflow content (not necessary for inline-block) */
-    white-space: nowrap;
 }
 
 .interest:hover {
@@ -93,6 +97,7 @@ main .about-section #greeting{
     grid-area: image;
     display: flex;
     justify-content: center;
+
 }
 
 .image img {
@@ -247,4 +252,11 @@ main .about-section #greeting{
     }
 }
 
+
+
+@media screen and (min-width: 2500px) {
+    .image img {
+        transform: translateX(-7vw); /* Moves the image 100 pixels to the right */
+    }
+}
 
