@@ -1,6 +1,6 @@
 import "../styles/Resume.css"
 import DownloadIcon from '@mui/icons-material/Download';
-import Footer from "./footer";
+import Footer from "./Footer";
 import Navbar from "./Navbabr";
 
 export default function Resume(){
