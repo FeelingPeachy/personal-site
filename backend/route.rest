@@ -12,12 +12,24 @@
 # }
 
 
-POST http://localhost:5000/
+# POST http://localhost:5000/
+# Content-Type: application/json
+
+# {
+#     "name": "Step Up",
+#     "email": "Activity tracking web app that promotes sustainability",
+#     "description": "45345345345 r4e"
+# }
+
+
+#GET https://46qq1kyv3a.execute-api.eu-west-2.amazonaws.com/dev/post
+
+POST https://46qq1kyv3a.execute-api.eu-west-2.amazonaws.com/dev/post
 Content-Type: application/json
 
 {
-    "name": "Step Up",
-    "email": "Activity tracking web app that promotes sustainability",
-    "description": "45345345345 r4e"
+    "projectid": "2",
+    "title": "Portfolio Code",
+    "content": "link to repo containing code and assets used within this website",
+    "Link" : "https://github.com/FeelingPeachy/personal-site"
 }
-
