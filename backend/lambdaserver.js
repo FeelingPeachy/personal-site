@@ -3,27 +3,29 @@ import {
   DynamoDBDocumentClient,
   ScanCommand,
   PutCommand,
-  GetCommand,
-  DeleteCommand,
 } from "@aws-sdk/lib-dynamodb";
 
 const client = new DynamoDBClient({});
 const dynamo = DynamoDBDocumentClient.from(client);
 const tableName = "project-resume";
 
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
+};
 
 export const handler = async (event) => {
-  console.log("testing to see if working")
+  console.log("testing to see if working");
   try {
     if (event.httpMethod) {
       switch (event.httpMethod) {
 
-        // Fetch posts
-        case 'GET':
+        case "GET":
           if (event.path === "/post") {
             console.log(`API Gateway Event: GET Request ${event.path}`);
 
-            // Fetch data from DynamoDB
+            // Fetch all posts data from DynamoDB
             let result = await dynamo.send(
               new ScanCommand({ TableName: tableName })
             );
@@ -32,102 +34,100 @@ export const handler = async (event) => {
             return {
               statusCode: 200,
               body: JSON.stringify(body), // Ensure the body is serialized as a string
+              headers: corsHeaders, 
             };
 
           } else {
             return {
               statusCode: 400,
               body: JSON.stringify('Unknown HTTP Path'),
+              headers: corsHeaders,
             };
           }
 
-        // User wants to contact me
-        case 'POST':
-          if (event.path === "/post"){
-                  
+        // Create a new post
+        case "POST":
+          if (event.path === "/post") {
             const body = JSON.parse(event.body);
 
-            // Construct the DynamoDB PutCommand input item where projectid is the partition key and others are attributes
             const params = {
-                TableName: tableName,
-                Item: {
-                projectid: body.projectid, 
+              TableName: tableName,
+              Item: {
+                projectid: body.projectid,
                 title: body.title,
-                content: body.content, 
-                link: body.link
-                },
+                content: body.content,
+                link: body.link,
+              },
             };
 
-            // Write new Post to DynamoDB
+            // Write new post to DynamoDB
             await dynamo.send(new PutCommand(params));
 
             return {
-                statusCode: 201, // 201 Created
-                body: JSON.stringify({
+              statusCode: 201,
+              body: JSON.stringify({
                 message: "Item successfully created.",
                 item: params.Item,
-                    }),
-                };
-            }
+              }),
+              headers: corsHeaders, 
+            };
+          }
           
           if (event.path === "/contact") {
-       
             const body = JSON.parse(event.body);
 
-            // TODO
-            // Construct the DynamoDB PutCommand input item where projectid is the partition key and others are attributes
+            // TODO Construct the DynamoDB PutCommand input item for contacts
             const params = {
-                TableName: tableName, /// NEED TO CHANGE THE TABLE FOR CONTACT TABLE
-                Item: {
-                contactid: body.projectid, 
+              TableName: tableName, // Change this to the appropriate contact table
+              Item: {
+                contactid: body.projectid,
                 name: body.title,
                 email: body.email,
-                content: body.content, 
-                },
+                content: body.content,
+              },
             };
 
-            // Write new Post to DynamoDB
+            // Write new contact entry to DynamoDB
             await dynamo.send(new PutCommand(params));
 
             return {
-                statusCode: 201, // 201 Created
-                body: JSON.stringify({
+              statusCode: 201, // 201 Created
+              body: JSON.stringify({
                 message: "Item successfully created.",
                 item: params.Item,
-                    }),
-                };
-            }
-            else {
-                return {
-                statusCode: 400,
-                body: JSON.stringify('Unknown HTTP Path'),
-                };
-            }
+              }),
+              headers: corsHeaders, 
+            };
+          } else {
+            return {
+              statusCode: 400,
+              body: JSON.stringify('Unknown HTTP Path'),
+              headers: corsHeaders, 
+            };
+          }
 
         // Handle unknown HTTP methods
         default:
           return {
             statusCode: 400,
             body: JSON.stringify('Unknown HTTP Method'),
+            headers: corsHeaders, 
           };
       }
-
     } else {
-
       return {
         statusCode: 400,
         body: JSON.stringify('Missing HTTP Method'),
+        headers: corsHeaders, 
       };
     }
-  } 
-  
-  catch (error) {
-
+  } catch (error) {
     // unable to perform action
     console.error("Error:", error);
     return {
       statusCode: 500,
       body: JSON.stringify({ message: "Internal Server Error", error: error.message }),
+      headers: corsHeaders,
     };
   }
 };
