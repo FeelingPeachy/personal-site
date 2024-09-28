@@ -79,10 +79,9 @@ html, body {
     min-height: 3rem; 
     max-height: 3rem; 
     overflow: hidden; 
-    transition: max-height 1s ease; 
+    transition: max-height 2s ease; 
     cursor: pointer; 
 }
-
 
 .resume-content .wrapper .h2-header{
     display: flex;
@@ -92,13 +91,13 @@ html, body {
 
 .resume-content .wrapper .entry .h2-header #arrow {
     margin-right: 1rem;
-    transform: scale(1.5);
     position: relative;
     transition: transform 0.5s ease; 
 }
 
 .resume-content .wrapper .entry:hover #arrow {
     transform: translateX(100%); /*override old val and translate for */
+    transform: scale(0.7);
 }
 
 
@@ -113,11 +112,9 @@ html, body {
 
 .resume-content .wrapper div p {
     opacity: 0;
-    transition: opacity 0.3s ease; 
+    transition: opacity 1.5s ease; 
 }
 
 .resume-content .wrapper div:hover p {
     opacity: 1;
 }
-
-
