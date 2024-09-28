@@ -8,7 +8,7 @@ export default function Home(){
 
   const [posts, setPosts] = useState([]);
   const [text, setText] = useState('');
-  const text1 = "Hi, I am Darren!"
+  const text1 = "Hii, I am Darren!"
 
   // Fetching posts
   useEffect(() => {

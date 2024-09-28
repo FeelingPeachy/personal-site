@@ -33,7 +33,7 @@ export const handler = async (event) => {
           if (event.path === "/post") {
             console.log(`API Gateway Event: GET Request ${event.path}`);
 
-            // Fetch all posts data from DynamoDB
+            // Fetch all project posts data from DynamoDB
             let result = await dynamo.send(
               new ScanCommand({ TableName: tableName })
             );
@@ -41,7 +41,7 @@ export const handler = async (event) => {
 
             return {
               statusCode: 200,
-              body: JSON.stringify(body), // Ensure the body is serialized as a string
+              body: JSON.stringify(body), 
               headers: corsHeaders, 
             };
 
@@ -53,7 +53,7 @@ export const handler = async (event) => {
             };
           }
 
-        // Create a new post
+        // Create a new project post
         case "POST":
           if (event.path === "/post") {
             const body = JSON.parse(event.body);
@@ -80,33 +80,35 @@ export const handler = async (event) => {
               headers: corsHeaders, 
             };
           }
+
           
-          if (event.path === "/contact") {
-            const body = JSON.parse(event.body);
+          // if (event.path === "/contact") {
+          //   const body = JSON.parse(event.body);
 
-            // TODO Construct the DynamoDB PutCommand input item for contacts
-            const params = {
-              TableName: tableName, // Change this to the appropriate contact table
-              Item: {
-                contactid: body.projectid,
-                name: body.title,
-                email: body.email,
-                content: body.content,
-              },
-            };
+          //   // TODO create the relevant table for the contact, to store user queries
+          //   const params = {
+          //     TableName: tableName, // Change this to the appropriate contact table
+          //     Item: {
+          //       contactid: body.projectid,
+          //       name: body.title,
+          //       email: body.email,
+          //       content: body.content,
+          //     },
+          //   };
 
-            // Write new contact entry to DynamoDB
-            await dynamo.send(new PutCommand(params));
+          //   // Write new contact entry to DynamoDB
+          //   await dynamo.send(new PutCommand(params));
 
-            return {
-              statusCode: 201, // 201 Created
-              body: JSON.stringify({
-                message: "Item successfully created.",
-                item: params.Item,
-              }),
-              headers: corsHeaders, 
-            };
-          } else {
+          //   return {
+          //     statusCode: 201, // 201 Created
+          //     body: JSON.stringify({
+          //       message: "Item successfully created.",
+          //       item: params.Item,
+          //     }),
+          //     headers: corsHeaders, 
+          // };
+          //} 
+          else {
             return {
               statusCode: 400,
               body: JSON.stringify('Unknown HTTP Path'),
@@ -130,7 +132,7 @@ export const handler = async (event) => {
       };
     }
   } catch (error) {
-    // unable to perform action
+    //  if unable to perform action
     console.error("Error:", error);
     return {
       statusCode: 500,
