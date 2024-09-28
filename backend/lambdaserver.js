@@ -13,6 +13,7 @@ const tableName = "project-resume";
 
 
 export const handler = async (event) => {
+  console.log("testing to see if working")
   try {
     if (event.httpMethod) {
       switch (event.httpMethod) {
