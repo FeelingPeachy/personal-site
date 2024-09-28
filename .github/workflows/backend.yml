@@ -27,7 +27,7 @@ jobs:
           aws-region: eu-west-2
 
       - name: Zip Lambda function
-        run: zip -r lambdafunction.zip backend/lambdaserver.js
+        run: zip -r lambdafunction.zip backend/lambdaserver.mjs
 
       
       - name: Deploy to AWS Lambda
