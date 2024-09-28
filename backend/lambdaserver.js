@@ -17,6 +17,14 @@ const corsHeaders = {
 
 export const handler = async (event) => {
   console.log("testing to see if working");
+
+  if (event.httpMethod === "OPTIONS") {
+    return {
+      statusCode: 204,
+      headers: corsHeaders,
+    };
+  }
+  
   try {
     if (event.httpMethod) {
       switch (event.httpMethod) {
