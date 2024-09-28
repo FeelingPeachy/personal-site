@@ -9,6 +9,7 @@ export default function ContactFormm({ isOpen, setFormState }) {
         setFormState(false); // Close the form
     };
 
+    // TODO ADAPT TO WORK ON THE CONTACT TABLE
     const handleSubmit = async (e) => {
         e.preventDefault(); 
         const formData = new FormData(e.target); 

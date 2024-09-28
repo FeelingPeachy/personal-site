@@ -8,18 +8,20 @@ export default function Home(){
 
   const [posts, setPosts] = useState([]);
   const [text, setText] = useState('');
-  const text1 = "I am a computer Science student at the university of Exeter, currently doing my masters. I am passionate about creating and learning - have a look around to find out more!";
+  const text1 = " Hi, I am Darren!"
 
   // Fetching posts
   useEffect(() => {
     const fetchAllPosts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/posts/preview", {
-            method: "GET"
-        });
-        const data = await res.json(); 
-        setPosts(data); 
+          const res = await fetch("https://46qq1kyv3a.execute-api.eu-west-2.amazonaws.com/dev/post", {
+              method: "GET"
+          });
 
+          const data = await res.json(); 
+          setPosts(data); 
+          console.log(data)
+         
       } catch (error) {
           console.error('Error fetching posts', error);
       }
@@ -64,10 +66,17 @@ export default function Home(){
     <main>
       <div className="about-section">
         <div id="greeting">
-          Hi, I am Darren!
+          {text}
         </div>
         <div id="about-text">
-          {text}
+          I am a computer Science student at the university of Exeter, currently doing my masters.
+          I am passionate about creating and learning - have a look around to find out more! Here are some of my interests and skills:
+          <br></br>
+          <br />
+          <span className="interest"> Music Production </span>  <span className="interest">  Java </span> <span className="interest"> Guitar </span>
+          <span className="interest">  Python </span>  <span className="interest">  Machine Learning </span>  <span className="interest">  Javascript </span> 
+          <span className="interest">  AWS </span> 
+
         </div>
       </div>
     </main>
@@ -80,10 +89,10 @@ export default function Home(){
 
     {/* preview three projects */}
     {posts.map((post) => (
-      <div className="card" key={post._id} onClick={() => {loadcontent(post)}}> 
+      <div className="card" key={post.projectid} onClick={() => {loadcontent(post)}}> 
         <div className="card-content">
           <h1 style={{fontSize: "3rem"}}>{post.title}</h1>
-          <p>{post.description}</p>
+          <p style={{margin: "1rem"}}>{post.content}</p>
 
         </div>
           <div className="learnmore"> 
