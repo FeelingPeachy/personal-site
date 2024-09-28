@@ -1,11 +1,18 @@
 # Portfolio website
 
-This website is purposed to display what im working on. working on hosting and finishing backend functionality ...
+This personal website is built using AWS services with the purpose of helping my development in cloud native solutions . Static files are hosted on S3. The backend is uses AWS Lambda and API Gateway, which handle serverless functions and RESTful API requests. For data storage and retrieval, Amazon DynamoDB is utilized, ensuring quick access to dynamic content. This architecture allows for scalability and flexibility, aswell as making cost considerations neccesary for a simple portfolio. A CI/CD pipeline is used for the website to automates the integration and deployment of React files and AWS Lambda functions. 
 
-- quick preview of homepage: 
-    ![image](https://github.com/user-attachments/assets/59910088-759f-4582-ba0b-8805eedc1f60)
+## Architecture
 
-  - resume page preview:
-    ![image](https://github.com/user-attachments/assets/67dd6791-4fe1-4e03-a619-ad5505aab65a)
+![Alt text](https://programmaticponderings.com/wp-content/uploads/2019/10/new-04-sqs-dynamodb.png)
 
+
+### Note
+
+*** have noticed a few bugs that are still being fixed, if any more issues are spotted please let me know ! ***
+
+
+### website images
+![alt text](image.png)
+(ipad view)
 
