@@ -67,7 +67,7 @@ export default function Resume(){
 
         <div className="entry">
             <div className="h2-header">
-                    <h2>EXTRA CIRRICULARS</h2> 
+                    <h2>EXTRAS+</h2> 
                     <h2 id="arrow">IV</h2>
                 </div>
             
