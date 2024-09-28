@@ -63,27 +63,46 @@ main .about-section{
 main .about-section #greeting{
     font-weight: 800;
     font-size: 5rem;
-    margin-bottom: 1rem;
-    
+    margin-bottom: 1rem;  
 }
+
+#about-text{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-section .interest{
+    color: white;
+    background: #B454C1;
+    margin: 0.3rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    overflow: visible;                /* Show overflow content (not necessary for inline-block) */
+    white-space: nowrap;
+}
+
+.interest:hover {
+    background: #FFB84D;              /* Highlight color on hover */
+    color: black;                     /* Change text color on hover */
+}
+
 
 .image{
     
-    /* border: black solid; */
+    grid-area: image;
     display: flex;
     justify-content: center;
-    /* max-height: 40vh;  ///////////////  */
 }
 
-.image img{
-    max-width: 80%; 
-    max-width: 40vh; 
-
-    /* need to maintain the aspect raptio */
-    height: auto; 
-    width: auto;
+.image img {
+    height: auto;  
+    width: auto;      
+    max-height: 100%;    
+    max-width: 40vh;    
+    min-height: 250px;   
+    object-fit: cover;   
 }
-
 
 .content{
     grid-area: content;
@@ -103,10 +122,25 @@ main .about-section #greeting{
     font-family: "ProFontWindows", sans-serif;
     transition: ease transform 0.3s  ;
     margin-top: 2rem;
-
-
     display: flex;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.content .card::before {
+    position: absolute;
+    content: "";
+    background: rgba(255, 255, 255, 0.2); 
+    width: 30%;
+    height: 100%;
+    left: -100%; 
+    transform: skewX(-50deg); 
+    transition: left 1.5s; /* Specify which property to transition */
+}
+
+.content .card:hover::before {
+    left: 200%; /* No space between `:` and `before` */
 }
 
 .content .card:hover {
@@ -124,6 +158,11 @@ main .about-section #greeting{
     text-align: center;    
 }
 
+
+.content .card .card-content h1{
+    color: #B454C1;
+ }
+
 .learnmore {
     /* content: "Learn More"; */
     position: absolute; 
@@ -140,16 +179,11 @@ main .about-section #greeting{
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
-  
-.content .card:hover .learnmore {
+  .content .card:hover .learnmore {
     opacity: 1;
     transform: translateY(0.5rem);
 }
 
-
-.content .card .card-content h1{
-    color: #B454C1;
- }
     
 @font-face {
     font-family: 'ProFontWindows'; 

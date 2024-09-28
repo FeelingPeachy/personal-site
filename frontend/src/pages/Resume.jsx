@@ -1,6 +1,6 @@
 import "../styles/Resume.css"
 import DownloadIcon from '@mui/icons-material/Download';
-import Footer from "./Footer";
+import Footer from "./footer";
 import Navbar from "./Navbabr";
 
 export default function Resume(){
@@ -67,7 +67,7 @@ export default function Resume(){
 
         <div className="entry">
             <div className="h2-header">
-                    <h2>EXTRA CIRRICULARS</h2> 
+                    <h2>EXTRAS+</h2> 
                     <h2 id="arrow">IV</h2>
                 </div>
             
