@@ -8,7 +8,7 @@ export default function Home(){
 
   const [posts, setPosts] = useState([]);
   const [text, setText] = useState('');
-  const text1 = " Hi, I am Darren!"
+  const text1 = "Hi, I am Darren!"
 
   // Fetching posts
   useEffect(() => {
@@ -75,7 +75,8 @@ export default function Home(){
           <br />
           <span className="interest"> Music Production </span>  <span className="interest">  Java </span> <span className="interest"> Guitar </span>
           <span className="interest">  Python </span>  <span className="interest">  Machine Learning </span>  <span className="interest">  Javascript </span> 
-          <span className="interest">  AWS </span> 
+          <span className="interest">  AWS </span> <span className="interest">  Art </span> 
+
 
         </div>
       </div>
