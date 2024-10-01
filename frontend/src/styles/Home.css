@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     height:100%;
     overflow: auto;
+    font-size: 20px;
 }
   
 
@@ -106,7 +107,8 @@ main .about-section #greeting{
     max-height: 100%;    
     max-width: 40vh;    
     min-height: 250px;   
-    object-fit: cover;   
+    object-fit: cover;  
+    overflow: visible; 
 }
 
 .content{
@@ -130,10 +132,15 @@ main .about-section #greeting{
     display: flex;
     justify-content: center;
     position: relative;
+    
+}
+
+.card-content{
     overflow: hidden;
 }
 
-.content .card::before {
+.content .card-content::before {
+    
     position: absolute;
     content: "";
     background: rgba(255, 255, 255, 0.2); 
@@ -142,10 +149,12 @@ main .about-section #greeting{
     left: -100%; 
     transform: skewX(-50deg); 
     transition: left 1.5s; /* Specify which property to transition */
+    opacity: 0;
 }
 
-.content .card:hover::before {
+.content .card-content:hover::before {
     left: 200%; /* No space between `:` and `before` */
+    opacity: 1;
 }
 
 .content .card:hover {
@@ -177,7 +186,7 @@ main .about-section #greeting{
     background-color: #B454C1;
     color: white;
     border-radius: 5px;
-
+    overflow: visible;
     opacity: 0;
 
     transform: translateY(2rem); /* move the box down form its initial position then it will transition up */
@@ -204,7 +213,11 @@ main .about-section #greeting{
 }
 
 
+
+
 @media screen and (max-width:885px){
+
+
 
     .container {
         grid-template-columns: 1fr;
@@ -256,7 +269,13 @@ main .about-section #greeting{
 
 @media screen and (min-width: 2500px) {
     .image img {
-        transform: translateX(-7vw); /* Moves the image 100 pixels to the right */
+        transform: translateX(-7vw); 
     }
 }
 
+
+@media screen and (max-width:1200px){
+    html, body{
+        font-size: 16px;
+    }
+}

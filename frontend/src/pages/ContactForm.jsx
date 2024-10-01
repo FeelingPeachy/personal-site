@@ -13,15 +13,18 @@ export default function ContactFormm({ isOpen, setFormState }) {
     const handleSubmit = async (e) => {
         e.preventDefault(); 
         const formData = new FormData(e.target); 
-        const data = Object.fromEntries(formData.entries()); 
+        const data = Object.fromEntries(formData.entries());
+        
+        console.log(data)
     
         try {
-            const response = await fetch('http://localhost:5000/', {
+            const response = await fetch('http://darrensresume.com.s3-website.eu-west-2.amazonaws.com/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                    contactid: "1", // generate unique uid
                     name: data.name,
                     email: data.email,
                     description: data.message

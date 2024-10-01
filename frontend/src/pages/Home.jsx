@@ -76,7 +76,7 @@ export default function Home(){
         <div id="all-interest">
           <span className="interest"> Music Production </span>  <span className="interest">  Java </span> <span className="interest"> Guitar </span>
           <span className="interest">  Python </span>  <span className="interest">  Machine Learning </span>  <span className="interest">  Javascript </span> 
-          <span className="interest">  AWS </span> <span className="interest">  Art </span> 
+          <span className="interest">  AWS </span>  <span className="interest">  CSS </span> <span className="interest">  Art </span> <span className="interest">  Badminton </span>  
           </div>
       </div>
     </main>
@@ -89,17 +89,19 @@ export default function Home(){
 
     {/* preview three projects */}
     {posts.map((post) => (
-      <div className="card" key={post.projectid} onClick={() => {loadcontent(post)}}> 
-        <div className="card-content">
-          <h1 style={{fontSize: "3rem"}}>{post.title}</h1>
-          <p style={{margin: "1rem"}}>{post.content}</p>
+      <>
+        <div className="card" key={post.projectid} onClick={() => {loadcontent(post)}}> 
+          <div className="card-content">
+            <h1 style={{fontSize: "3rem"}}>{post.title}</h1>
+            <p style={{margin: "1rem"}}>{post.content}</p>
 
-        </div>
+          </div>  
           <div className="learnmore"> 
-              <span style={{display:"flex", alignItems: "center"}}>learn more <OpenInNewIcon style={{marginLeft: "5px"}}></OpenInNewIcon></span>
-            </div>    
-      </div>
-      
+          <span style={{display:"flex", alignItems: "center"}}>learn more <OpenInNewIcon style={{marginLeft: "5px"}}></OpenInNewIcon></span>
+        </div> 
+        </div>
+        
+      </>
     ))}
     </div>
 
