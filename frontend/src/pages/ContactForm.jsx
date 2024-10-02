@@ -18,16 +18,15 @@ export default function ContactFormm({ isOpen, setFormState }) {
         console.log(data)
     
         try {
-            const response = await fetch('http://darrensresume.com.s3-website.eu-west-2.amazonaws.com/contact', {
+            const response = await fetch('https://46qq1kyv3a.execute-api.eu-west-2.amazonaws.com/dev/contact', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    contactid: "1", // generate unique uid
                     name: data.name,
                     email: data.email,
-                    description: data.message
+                    message: data.message
                 })
             });
     

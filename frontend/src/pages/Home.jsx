@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Footer from "./Footer";
 import Navbar from "./Navbabr";
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Home(){
 
@@ -11,6 +12,7 @@ export default function Home(){
   const text1 = "Hii, I am Darren!"
 
   // Fetching posts
+  ///*
   useEffect(() => {
     const fetchAllPosts = async () => {
       try {
@@ -29,7 +31,7 @@ export default function Home(){
 
     fetchAllPosts();
   }, []);
-
+  //*/
     
   // typewrite recursive effect
     useEffect(() => {
@@ -86,6 +88,8 @@ export default function Home(){
     </div>
 
     <div className="content"> 
+
+    {posts.length === 0 ? <span style={{ color: 'grey.500' }}> <CircularProgress></CircularProgress> </span> : null}
 
     {/* preview three projects */}
     {posts.map((post) => (
