@@ -47,20 +47,20 @@ html, body {
     margin-top: 2rem;
     margin-right: 4.3rem;
     transform: scale(2);
-    color: purple;
+    color: var(--base-col);
     transition: color 0.2s;
     
 }
 
 .resume-content #downloader a{
     text-decoration: none;
-    color: purple;
+    color:  var(--base-col);
     transition: color 0.2s;
     
 }
 
 .resume-content #downloader:hover a{
-    color:#B454C1;
+    color: var(--base-col)C1;
    
 }
 
@@ -87,6 +87,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: black;
 }
 
 .resume-content .wrapper .entry .h2-header #arrow {

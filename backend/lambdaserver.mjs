@@ -8,6 +8,7 @@ import {
 const client = new DynamoDBClient({});
 const dynamo = DynamoDBDocumentClient.from(client);
 const tableName = "project-resume";
+const contactTableName = "Contact";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -16,6 +17,7 @@ const corsHeaders = {
 };
 
 export const handler = async (event) => {
+  
   console.log("testing to see if working");
 
   if (event.httpMethod === "OPTIONS") {
@@ -81,33 +83,28 @@ export const handler = async (event) => {
             };
           }
 
-          
-          // if (event.path === "/contact") {
-          //   const body = JSON.parse(event.body);
+          if (event.path == "/contact"){
+            const body = JSON.parse(event.body);
+            const params = {
+              TableName: contactTableName,
+              Item: {
+                contactid: body.name,
+                email: body.email,
+                message: body.message
+              }
+            }
 
-          //   // TODO create the relevant table for the contact, to store user queries
-          //   const params = {
-          //     TableName: tableName, // Change this to the appropriate contact table
-          //     Item: {
-          //       contactid: body.projectid,
-          //       name: body.title,
-          //       email: body.email,
-          //       content: body.content,
-          //     },
-          //   };
+            await dynamo.send(new PutCommand(params))
 
-          //   // Write new contact entry to DynamoDB
-          //   await dynamo.send(new PutCommand(params));
-
-          //   return {
-          //     statusCode: 201, // 201 Created
-          //     body: JSON.stringify({
-          //       message: "Item successfully created.",
-          //       item: params.Item,
-          //     }),
-          //     headers: corsHeaders, 
-          // };
-          //} 
+            return {
+              statusCode: 201,
+              body: JSON.stringify({
+                message: "Item successfully created.",
+                item: params.Item,
+              }),
+              headers: corsHeaders, 
+            };
+          }   
           else {
             return {
               statusCode: 400,

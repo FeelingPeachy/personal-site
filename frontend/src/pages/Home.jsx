@@ -89,7 +89,7 @@ export default function Home(){
 
     <div className="content"> 
 
-    {posts.length === 0 ? <span style={{ color: 'grey.500' }}> <CircularProgress></CircularProgress> </span> : null}
+    {posts.length === 0 ? <span style={{ color: '#5d2a63', }}> <CircularProgress color="#5d2a63" fontSize="30px"  /> </span> : null}
 
     {/* preview three projects */}
     {posts.map((post) => (

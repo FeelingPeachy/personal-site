@@ -1,3 +1,10 @@
+:root{
+    --base-col: #B454C1;
+    --base-col-dark: #5d2a63;
+    --base-text-col: white;
+}
+
+
 html, body {
     margin: 0;
     padding: 0;
@@ -80,8 +87,8 @@ main .about-section #greeting{
 }
 
 .about-section .interest{
-    color: white;
-    background: #B454C1;
+    color: var(--base-text-col);
+    background: var(--base-col);
     margin: 0.3rem;
     padding: 0.5rem;
     border-radius: 10px;
@@ -124,7 +131,7 @@ main .about-section #greeting{
 .content .card{
     flex-grow: 1;
     margin: 1rem;
-    border: #B454C1 solid;
+    border: var(--base-col) solid;
     width: 30%;
     font-family: "ProFontWindows", sans-serif;
     transition: ease transform 0.3s  ;
@@ -174,7 +181,7 @@ main .about-section #greeting{
 
 
 .content .card .card-content h1{
-    color: #B454C1;
+    color: var(--base-col);
  }
 
 .learnmore {
@@ -183,8 +190,8 @@ main .about-section #greeting{
     bottom: -3rem;
     padding: 0.5rem;
     text-align: center;
-    background-color: #B454C1;
-    color: white;
+    background-color: var(--base-col);
+    color: var(--base-text-col);
     border-radius: 5px;
     overflow: visible;
     opacity: 0;
@@ -259,7 +266,7 @@ main .about-section #greeting{
         width: auto;
     }
     .content .card .card-content h1 {
-        color: #B454C1;
+        color: var(--base-col);
         font-size: 5vw;
         
     }

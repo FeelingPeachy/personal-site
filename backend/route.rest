@@ -24,12 +24,26 @@
 
 #GET https://46qq1kyv3a.execute-api.eu-west-2.amazonaws.com/dev/post
 
-POST https://46qq1kyv3a.execute-api.eu-west-2.amazonaws.com/dev/post
+# POST https://46qq1kyv3a.execute-api.eu-west-2.amazonaws.com/dev/post
+# Content-Type: application/json
+
+# {
+#     "projectid": "1",
+#     "title": "Step Up",
+#     "content": "The activity tracking web application allows users to create accounts, link them to Strava for automatic activity logging, follow friends, and compete on leaderboards. As users complete activities, they can grow a virtual garden and engage with a sustainable community.",
+#     "link" : "https://github.com/FeelingPeachy/StepUp"
+# }
+
+
+POST https://46qq1kyv3a.execute-api.eu-west-2.amazonaws.com/dev/contact
 Content-Type: application/json
 
 {
-    "projectid": "2",
-    "title": "Portfolio Code",
-    "content": "link to repo containing code and assets used within this website",
-    "Link" : "https://github.com/FeelingPeachy/personal-site"
+    "contactid": "1",
+    "title": "Step Up",
+    "content": "The activity tracking web application allows users to create accounts, link them to Strava for automatic activity logging, follow friends, and compete on leaderboards. As users complete activities, they can grow a virtual garden and engage with a sustainable community.",
+    "link" : "https://github.com/FeelingPeachy/StepUp"
 }
+
+
+

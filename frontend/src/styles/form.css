@@ -46,15 +46,15 @@
     padding: 0.5rem 1rem;   
     border: none;            
     border-radius: 5px;   
-    background-color: #5d2a63; 
-    color: white;            
+    background-color: var(--base-col-dark); 
+    color: var(--base-text-col);            
     cursor: pointer;        
     transition: background-color 0.3s; 
     font-family: "ProFontWindows", sans-serif;
 }
 
 .button-container button:hover {
-    background-color: #B454C1; 
+    background-color: var(--base-col); 
 }
 
 input,
@@ -74,7 +74,7 @@ textarea{
 
 input:focus,
 textarea:focus {
-    border-bottom: 2px solid #B454C1; 
+    border-bottom: 2px solid var(--base-col); 
     transition: border-bottom 0.3s ease; 
     
 }
