@@ -20,6 +20,7 @@ export default function Navbar(){
     }
 
     const handleChangeMode = () => {
+        console.log("click")
         setScreenMode(false) 
         //  somehow given change in state, change colour theme
     }
@@ -46,19 +47,25 @@ export default function Navbar(){
 
         {/* drop down menu */}
         {/* need to fix the switch mode in the dropdown nav bar */}
-        <div className="dropdown">
-            <button className="dropbtn">Menu</button>
 
-            <div className="dropdown-content">
-                <Link to="/resume">Resume</Link>
-                <a href="https://github.com/FeelingPeachy">Projects</a>
-                <a onClick={handleContact}>Contact</a>
+        <div className="mini-nav-wrapper">
+
+            <div className="dropdown">
+                <button className="dropbtn">Menu</button>
+
+                <div className="dropdown-content">
+                    <Link to="/resume">Resume</Link>
+                    <a href="https://github.com/FeelingPeachy">Projects</a>
+                    <a onClick={handleContact}>Contact</a>
+                </div> 
+                
             </div>
 
             <div className="mode">
-                <img src='/Display.png'></img>
-            </div>   
+                    <img onClick={handleChangeMode} src='/Display.png'></img>
+            </div>  
         </div>
+   
 
         </nav>
 
