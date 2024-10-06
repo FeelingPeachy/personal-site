@@ -1,9 +1,21 @@
-:root{
+.light{
     --base-col: #B454C1;
     --base-col-dark: #5d2a63;
     --base-text-col: white;
+    --secondary-text-col: black;
+    background-image: url("/Component 21.png");
+
+
 }
 
+.dark{
+    --base-col: #B454C1;
+    --base-col-dark: #5d2a63;
+    --base-text-col: pink;
+    --secondary-text-col: white;
+    color: white;
+    background-image: url("/Preloader - Dark.png");
+}
 
 html, body {
     margin: 0;
@@ -11,6 +23,8 @@ html, body {
     height:100%;
     overflow: auto;
     font-size: 20px;
+    
+    
 }
   
 
@@ -19,14 +33,13 @@ html, body {
     min-height: 100vh;
     /* //border: #000 solid; */
 
-    /* importanting background asset and adding it */
-    background-image: url("/Component 21.png");
     background-size: cover;
     background-position: center; 
     overflow: hidden;
-    
     filter: brightness(1.2);
     filter: contrast(1.2);
+
+    /* importanting background asset and adding it */
 
     /* setting up the grid for content*/
     grid-template-columns: 2fr 1fr;
@@ -92,6 +105,7 @@ main .about-section #greeting{
     margin: 0.3rem;
     padding: 0.5rem;
     border-radius: 10px;
+    color: white;
 }
 
 .interest:hover {

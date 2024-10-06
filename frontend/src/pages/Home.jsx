@@ -4,11 +4,15 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Footer from "./Footer";
 import Navbar from "./Navbabr";
 import CircularProgress from '@mui/material/CircularProgress';
+import { useTheme } from "../contexts/themecontext";
 
 export default function Home(){
 
   const [posts, setPosts] = useState([]);
   const [text, setText] = useState('');
+  const {screenMode} = useTheme(); // inherit theme vals
+  console.log(screenMode)
+
   const text1 = "Hii, I am Darren!"
 
   // Fetching posts
@@ -62,9 +66,9 @@ export default function Home(){
     window.location.href = post.link; // route to external web page
   }
   
-  return <div className="container">
+  // if screenmode is positive then apply light else apply dark
+  return <div className={screenMode ? "container light" : "container dark"}>
     <Navbar></Navbar>
-    
     <main>
       <div className="about-section">
         <div id="greeting">

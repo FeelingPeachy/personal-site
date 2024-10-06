@@ -2,20 +2,22 @@ import "../styles/Resume.css"
 import DownloadIcon from '@mui/icons-material/Download';
 import Footer from "./Footer";
 import Navbar from "./Navbabr";
+import { useTheme } from "../contexts/themecontext";
 
 export default function Resume(){
 
 
-  return <div className="container">
+  const {screenMode} = useTheme();
+  return <div className={screenMode ? "container light" : "container dark"}>
     <Navbar></Navbar>
 
     {/* <span style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>2024 - Present  <span id="arrow" style={{display: "flex", justifyContent:"center"}}><KeyboardArrowDownIcon></KeyboardArrowDownIcon> </span></span> */}
     <div className="resume-content">
-      <div id="downloader">
+      {/* <div id="downloader">
         <a href="../public/Darren Gitagama word cv 2025 v2.pdf" download>
           <DownloadIcon></DownloadIcon>
         </a>
-      </div>  
+      </div>   */}
     
     <div className="wrapper">
         
@@ -102,3 +104,7 @@ export default function Resume(){
     <Footer></Footer>
   </div>
 }
+
+
+// 1E5AD2
+// B454C1

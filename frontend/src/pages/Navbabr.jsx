@@ -3,12 +3,13 @@ import { useState } from 'react';
 import ContactFormm from './ContactForm';
 import "../styles/navbar.css"
 import { Link } from 'react-router-dom';
+import { useTheme } from '../contexts/themecontext';
 
 export default function Navbar(){
 
     const navigate = useNavigate(); 
     const [open, setOpen] = useState(false)
-    const[screenMode, setScreenMode] = useState(true)
+    const {screenMode, setScreenMode} = useTheme();
 
     const handleclick = () => {
         navigate('/resume')
@@ -21,7 +22,8 @@ export default function Navbar(){
 
     const handleChangeMode = () => {
         console.log("click")
-        setScreenMode(false) 
+        setScreenMode(!screenMode) 
+        console.log(screenMode)
         //  somehow given change in state, change colour theme
     }
 
@@ -39,7 +41,7 @@ export default function Navbar(){
 
             {/* lightmode/darkmode */}
             <div className="mode">
-                <img src='/Display.png' onClick={handleChangeMode}></img>
+                <img src={screenMode ? "/Display.png" : "/Display (1).png"} onClick={handleChangeMode}></img>
             </div>    
         </div>
 
@@ -58,11 +60,11 @@ export default function Navbar(){
                     <a href="https://github.com/FeelingPeachy">Projects</a>
                     <a onClick={handleContact}>Contact</a>
                 </div> 
-                
+
             </div>
 
             <div className="mode">
-                    <img onClick={handleChangeMode} src='/Display.png'></img>
+            <img src={screenMode ? "/Display.png" : "/Display (1).png"} onClick={handleChangeMode}></img>
             </div>  
         </div>
    

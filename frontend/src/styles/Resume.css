@@ -1,23 +1,4 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height:100%;
-    overflow: auto;
-}
-  
-
 .container{
-    display:grid;
-    height: auto;
-
-    /* importanting background asset and adding it */
-    background-image: url("/Component 21.png");
-    background-size: cover;
-    background-position: center; 
-    overflow: hidden;
-    
-    filter: brightness(1.2);
-    filter: contrast(1.2);
 
     /* setting up the grid for content*/
     grid-template-columns: 1fr;
@@ -28,8 +9,7 @@ html, body {
     "footer footer";
     
     grid-gap: 0.2rem;
-    padding: 1rem;    
-    
+    padding: 1rem;        
 }
 
 .resume-content {
@@ -59,6 +39,10 @@ html, body {
     
 }
 
+h2{
+    color:  var(--secondary-text-col)
+}
+
 .resume-content #downloader:hover a{
     color: var(--base-col)C1;
    
@@ -69,7 +53,7 @@ html, body {
 }
 
 .resume-content .wrapper .entry{
-    border-bottom: black solid 0.08rem;
+    border-bottom: var(--secondary-text-col) solid 0.08rem;
 }
 
 .resume-content .wrapper div {
