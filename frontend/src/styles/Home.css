@@ -119,17 +119,36 @@ main .about-section #greeting{
     grid-area: image;
     display: flex;
     justify-content: center;
-
+    position: relative;
+    overflow: visible; 
+  
 }
 
 .image img {
+    
     height: auto;  
     width: auto;      
     max-height: 100%;    
     max-width: 40vh;    
-    min-height: 250px;   
+    min-height: 400px;   
     object-fit: cover;  
     overflow: visible; 
+    transform: translateY(3rem);
+    z-index: 100;
+}
+
+.image::before{
+    position: absolute;
+    content: "";
+    background-image: url("/Rectangle 1.png");
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-position: center; 
+    /* background-size: 100%;   */
+    z-index: 99;
 }
 
 .content{
