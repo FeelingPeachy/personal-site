@@ -39,10 +39,10 @@ POST https://46qq1kyv3a.execute-api.eu-west-2.amazonaws.com/dev/contact
 Content-Type: application/json
 
 {
-    "contactid": "1",
-    "title": "Step Up",
-    "content": "The activity tracking web application allows users to create accounts, link them to Strava for automatic activity logging, follow friends, and compete on leaderboards. As users complete activities, they can grow a virtual garden and engage with a sustainable community.",
-    "link" : "https://github.com/FeelingPeachy/StepUp"
+    "contactid ": "1",
+    "name": "Step Up",
+    "email": "The activity tracking web application allows users to create accounts, link them to Strava for automatic activity logging, follow friends, and compete on leaderboards. As users complete activities, they can grow a virtual garden and engage with a sustainable community.",
+    "mesage" : "https://github.com/FeelingPeachy/StepUp"
 }
 
 
