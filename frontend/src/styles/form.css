@@ -7,7 +7,7 @@
     top: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5); /* creating a darkened background for when we open form  */
-    z-index: 1; /*Place it above the stack */
+    z-index: 1000; /*Place it above the stack */
 }
 
 
@@ -24,7 +24,7 @@
     height: auto;
     padding: 2rem;
     border-radius: 10px;
-    z-index: 1;
+    z-index: 1001;
     font-family: "ProFontWindows", sans-serif;
     display: flex;
     flex-direction: column;
@@ -39,7 +39,7 @@
     display: flex;            
     justify-content: center;  
     margin-top: 1rem;        
-    gap: 1rem
+    gap: 1rem;    
 }
 
 .button-container button {
