@@ -109,45 +109,43 @@ main .about-section #greeting{
 }
 
 .interest:hover {
-    background: #FFB84D;              /* Highlight color on hover */
-    color: black;                     /* Change text color on hover */
+    background: #FFB84D;              
+    color: black;                     
 }
 
 
-.image{
-    
+.image {
     grid-area: image;
     display: flex;
-    justify-content: center;
-    position: relative;
-    overflow: visible; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    /* border: #FFB84D solid 1rem;  */
+    position: relative; 
   
+   
 }
 
-.image img {
-    
-    height: auto;  
-    width: auto;      
-    max-height: 100%;    
-    max-width: 40vh;    
-    min-height: 400px;   
-    object-fit: cover;  
-    overflow: visible; 
-    transform: translateY(3rem);
-    z-index: 100;
+#memoji, #memoji-back {
+    width: 100%; 
+    height: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.image::before{
+
+#memoji img, #memoji-back img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+#memoji {
+    z-index: 100; 
+}
+
+#memoji-back {
     position: absolute;
-    content: "";
-    background-image: url("/Rectangle 1.png");
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-repeat: no-repeat;
-    background-position: center; 
-    /* background-size: 100%;   */
     z-index: 99;
 }
 
@@ -155,9 +153,10 @@ main .about-section #greeting{
     grid-area: content;
     /* border: black solid; */
     display: flex;
-    flex-wrap: wrap; /* allow to flex wrap so when below width can wrap and 100%*/
+    flex-wrap: wrap; 
     justify-content: center;
     font-family: "ProFontWindows", sans-serif;
+    /* border: green solid 1rem;  */
 }
 
 
@@ -193,7 +192,7 @@ main .about-section #greeting{
 }
 
 .content .card-content:hover::before {
-    left: 200%; /* No space between `:` and `before` */
+    left: 200%; 
     opacity: 1;
 }
 
@@ -293,29 +292,26 @@ main .about-section #greeting{
     
     }
 
-    .image img{
-        max-width: 60%; 
-        height: auto; 
-        width: auto;
-    }
+
     .content .card .card-content h1 {
         color: var(--base-col);
         font-size: 5vw;
         
     }
+
 }
 
-
-
-@media screen and (min-width: 2500px) {
-    .image img {
-        transform: translateX(-7vw); 
-    }
-}
 
 
 @media screen and (max-width:1200px){
     html, body{
         font-size: 16px;
+    }
+}
+
+
+@media screen and (max-width:500px){
+    #memoji-back{
+        max-width: 90%; 
     }
 }
