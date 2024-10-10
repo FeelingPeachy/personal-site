@@ -88,29 +88,37 @@ export default function Home(){
     </main>
     
     <div className="image">
+      
+        <div id="memoji">
         <img src="/Head.png" alt="Memoji" /> 
+        </div>
+
+        <div id="memoji-back">
+        <img src={screenMode ? "/Rectangle 1_dark.png" : "/Rectangle 1.png"} ></img>
+        </div>
+        
     </div>
 
     <div className="content"> 
 
-    {posts.length === 0 ? <span style={{ color: '#5d2a63', }}> <CircularProgress color="#5d2a63" fontSize="30px"  /> </span> : null}
+      {posts.length === 0 ? <span style={{ color: '#5d2a63', }}> <CircularProgress color="#5d2a63" fontSize="30px"  /> </span> : null}
 
-    {/* preview three projects */}
-    {posts.map((post) => (
-      <>
-        <div className="card" key={post.projectid} onClick={() => {loadcontent(post)}}> 
-          <div className="card-content">
-            <h1 style={{fontSize: "3rem"}}>{post.title}</h1>
-            <p style={{margin: "1rem"}}>{post.content}</p>
+      {/* preview three projects */}
+      {posts.map((post) => (
+        <>
+          <div className="card" key={post.projectid} onClick={() => {loadcontent(post)}}> 
+            <div className="card-content">
+              <h1 style={{fontSize: "3rem"}}>{post.title}</h1>
+              <p style={{margin: "1rem"}}>{post.content}</p>
 
-          </div>  
-          <div className="learnmore"> 
-          <span style={{display:"flex", alignItems: "center"}}>learn more <OpenInNewIcon style={{marginLeft: "5px"}}></OpenInNewIcon></span>
-        </div> 
-        </div>
-        
-      </>
-    ))}
+            </div>  
+            <div className="learnmore"> 
+            <span style={{display:"flex", alignItems: "center"}}>learn more <OpenInNewIcon style={{marginLeft: "5px"}}></OpenInNewIcon></span>
+          </div> 
+          </div>
+          
+        </>
+      ))}
     </div>
 
     <Footer></Footer>
