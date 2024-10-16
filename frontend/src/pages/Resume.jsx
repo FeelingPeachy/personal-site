@@ -18,7 +18,10 @@ export default function Resume(){
           <DownloadIcon></DownloadIcon>
         </a>
       </div>   */}
-    
+
+
+
+    {/* TODO: reveal content once clicked instead of onhover */}
     <div className="wrapper">
         
         <div className="entry">

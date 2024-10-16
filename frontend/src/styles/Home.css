@@ -66,9 +66,26 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    
 
    
 }
+
+/* main::before{
+    position: absolute;
+    content: '';
+    top: -4.5rem  ;
+    right: 11rem;
+
+    width: 100%;
+    height: 100%;
+    /* background-color: aquamarine; */
+    /* background: url("/codingislife.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    z-index: 1; */
+/* } */
 
 main .about-section{
     
@@ -78,7 +95,8 @@ main .about-section{
     text-align: center;
     justify-content: flex-start; /* items are packed toward the start of the flex-direction. */
     padding: 2rem;    /* determining how far to the top of main container */
-    font-family: 'ProFontWindows', sans-serif;    
+    font-family: 'ProFontWindows', sans-serif;  
+    z-index: 50;          
 }
 
 main .about-section #greeting{
