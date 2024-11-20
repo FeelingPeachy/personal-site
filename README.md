@@ -8,7 +8,3 @@ This personal website is built using AWS services with the purpose of helping my
 
 ![Alt text](https://programmaticponderings.com/wp-content/uploads/2019/10/new-04-sqs-dynamodb.png)
 
-
-### Note
-
-*** have noticed a few bugs that are still being fixed, if any more issues are spotted please let me know ! ***
